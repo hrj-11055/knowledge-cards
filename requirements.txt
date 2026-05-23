@@ -1,0 +1,17 @@
+# 知识卡片制作工具 · 依赖清单
+# 按模式安装，不需要全部安装
+
+# ── 基础（所有模式都需要） ──
+# Python 3.8+（系统自带即可，无额外依赖）
+
+# ── API 模式（batch_send_api.py）──
+# 用 OpenAI API 直接生成图片，最可靠
+openai>=1.0.0
+
+# ── 网页模式（batch_send_web.py）──
+# 用 Playwright 自动化 ChatGPT 网页版
+playwright>=1.40.0
+
+# ── 桌面端全自动模式（Windows/Linux）──
+# macOS 不需要，用 AppleScript
+pyautogui>=0.9.54

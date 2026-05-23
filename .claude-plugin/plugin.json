@@ -1,0 +1,10 @@
+{
+  "name": "knowledge-cards",
+  "description": "AI 批量知识卡片制作工具。从知识点收集到提示词生成到批量出图，完整覆盖知识卡片制作全流程。支持任意学科（理科/文科/语言），多种风格配色可选，跨平台自动化脚本。当用户说「做知识卡片」「生成卡片提示词」「知识卡片教程」时触发。",
+  "author": {
+    "name": "MarkHuang"
+  },
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": ["knowledge-cards", "flashcards", "study", "education", "AI-images", "prompts"]
+}
