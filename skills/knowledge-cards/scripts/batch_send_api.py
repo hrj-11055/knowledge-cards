@@ -18,6 +18,7 @@ batch_send_api.py · 全自动 API 模式（跨平台 · OpenAI API）
     python3 batch_send_api.py --model gpt-image-1        # 指定模型
     python3 batch_send_api.py --size 1536x1024           # 指定尺寸
     python3 batch_send_api.py --output ./generated/心理   # 指定输出目录
+    python3 batch_send_api.py --iter 2                   # 迭代序号（影响文件名）
     python3 batch_send_api.py --dry-run                  # 只打印不生成
 """
 
@@ -57,6 +58,8 @@ def main():
     ap.add_argument("--delay", type=int, default=5,
                     help="每条之间的间隔秒数（避免触发速率限制）")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--iter", type=int, default=None,
+                    help="迭代序号，影响输出文件名（如 card_3_1_iter_002.png）")
     args = ap.parse_args()
 
     try:
@@ -113,7 +116,9 @@ def main():
             print(f"   🧪 DRY RUN — 跳过生成\n")
             continue
 
-        filename = f"card_{p['card_no'].replace('.', '_')}.png"
+        card_slug = p['card_no'].replace('.', '_')
+        iter_tag = f"_iter_{args.iter:03d}" if args.iter else ""
+        filename = f"card_{card_slug}{iter_tag}.png"
         filepath = output_dir / filename
 
         # 如果已存在则跳过

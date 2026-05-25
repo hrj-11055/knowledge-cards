@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "scoring": {
+    "scale": "0-10",
+    "pass_threshold": 7.0,
+    "fail_threshold": 5.0,
+    "prompt_weight": 0.3,
+    "image_weight": 0.7
+  },
+  "prompt_eval": {
+    "modules": ["style", "title", "text", "visual", "color"],
+    "max_text_chars": 400,
+    "min_text_chars": 200,
+    "required_color_format": "HEX",
+    "layout_types": [
+      "左文右图", "左文右图", "时间轴", "时间线",
+      "网格", "田字格", "流程图", "环形", "层级",
+      "公式居中", "上图下文"
+    ],
+    "chinese_accuracy_keywords": ["中文准确", "准确无误", "清晰准确", "不出现错别字", "不得出现乱码"]
+  },
+  "image_eval": {
+    "method": "claude_vision",
+    "model": "claude-sonnet-4-20250514",
+    "dimensions": [
+      "chinese_text_accuracy",
+      "style_consistency",
+      "color_accuracy",
+      "layout_compliance",
+      "content_completeness",
+      "visual_quality",
+      "readability"
+    ]
+  },
+  "iteration": {
+    "max_iterations": 3,
+    "auto_fix_threshold": 5.0,
+    "auto_regenerate_threshold": 3.0
+  }
+}

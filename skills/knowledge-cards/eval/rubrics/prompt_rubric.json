@@ -1,0 +1,88 @@
+{
+  "version": "1.0",
+  "dimensions": {
+    "module_completeness": {
+      "description": "5 模块完整性：style, title, text, visual, color",
+      "scoring": {
+        "10": "5/5 模块全部存在",
+        "8": "4/5 模块存在",
+        "6": "3/5 模块存在",
+        "4": "2/5 模块存在",
+        "0": "1/5 或更少"
+      },
+      "veto_below": 5,
+      "method": "local"
+    },
+    "hex_color_specificity": {
+      "description": "所有颜色是否都用 HEX 值指定",
+      "scoring": {
+        "10": "所有颜色都是 HEX 值",
+        "7": "大部分是 HEX，少数用颜色名",
+        "4": "大部分用颜色名",
+        "0": "未指定颜色"
+      },
+      "method": "local"
+    },
+    "visual_description_specificity": {
+      "description": "视觉描述是否具体到画师能直接动笔",
+      "scoring": {
+        "10": "具体到物体、位置、比例、构图",
+        "7": "大部分具体，少量模糊",
+        "4": "主要是'画一个示意图'等模糊描述",
+        "0": "缺失或完全模糊"
+      },
+      "method": "llm"
+    },
+    "text_density": {
+      "description": "文字内容字数是否在 200-400 范围",
+      "scoring": {
+        "10": "250-350 字（最佳）",
+        "8": "200-250 或 350-400 字",
+        "5": "150-200 或 400-450 字",
+        "3": "< 150 或 > 450 字",
+        "0": "缺失文字内容"
+      },
+      "method": "local"
+    },
+    "layout_variety": {
+      "description": "同章内是否轮换了不同版式",
+      "scoring": {
+        "10": "与同章前一张卡版式不同",
+        "7": "不同但有部分重叠",
+        "4": "与前一张卡相同",
+        "0": "未指定版式"
+      },
+      "method": "local"
+    },
+    "self_containedness": {
+      "description": "是否包含完整风格信息，不依赖上下文",
+      "scoring": {
+        "10": "完整包含风格、配色、版式信息",
+        "7": "大部分包含，引用了部分共享设定",
+        "4": "严重依赖上下文",
+        "0": "仅包含差异部分"
+      },
+      "method": "local"
+    },
+    "chinese_accuracy_emphasis": {
+      "description": "是否包含中文准确性要求",
+      "scoring": {
+        "10": "在文字标题和末尾要求中各强调一次",
+        "7": "提及一次",
+        "4": "隐含但未明确说明",
+        "0": "完全未提及"
+      },
+      "method": "local"
+    },
+    "source_grounding": {
+      "description": "内容是否来自参考资料，有无来源标注",
+      "scoring": {
+        "10": "所有事实都有来源标注",
+        "7": "大部分有来源标注",
+        "4": "无标注但内容与参考资料一致",
+        "0": "无标注，无法验证来源"
+      },
+      "method": "llm"
+    }
+  }
+}
