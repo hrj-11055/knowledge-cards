@@ -1,9 +1,4 @@
 __pycache__/
 *.pyc
-.DS_Store
-prompts.json
+*.json.tmp
 generated/
-*.png
-*.jpg
-*.jpeg
-.webcache/
