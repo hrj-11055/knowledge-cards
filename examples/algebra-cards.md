@@ -1,6 +1,6 @@
 # Self-authored sample: square of a sum
 
-Source: algebraic expansion, checked by multiplication and numeric substitution in this repository's demo. No textbook text or illustration is reproduced.
+Source: [self-authored sample lesson plan](sample-lesson-plan.md), sections “Teaching note” and “Common error”. Checked by multiplication and numeric substitution in this repository's demo. No textbook text or illustration is reproduced.
 
 # 第 01 章 · 代数恒等式
 

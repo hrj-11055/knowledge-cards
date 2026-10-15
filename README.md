@@ -2,6 +2,8 @@
 
 A reusable workflow for making educational image cards from checked content. It prepares image prompts and requires review of the resulting image before distribution.
 
+**Input:** users may upload an electronic lesson plan or textbook. The Skill guides extraction from readable PDF, DOCX, text/Markdown, and page images, subject to the tools available in the host agent. Scanned pages require visual reading or OCR and page-level checking. Unreadable pages are reported as gaps; conversion is not guaranteed for every file. Materials can be processed chapter by chapter, with page references and a coverage check. Source files stay private by default.
+
 ## Install
 
 Clone this repository and copy the skill folder into your agent's skill directory:
@@ -20,13 +22,14 @@ For Claude Code, use `~/.claude/skills/` instead. Open a new session and ask for
 python3 skills/knowledge-cards/scripts/extract_prompts.py examples/algebra-cards.md /tmp/knowledge-card-prompts.json
 ```
 
-The command extracts one prompt as JSON. It does not call an image API or verify generated pixels. Use the example prompt in an image tool, then complete the [review checklist](skills/knowledge-cards/references/review-checklist.md). The example formula is checked by expansion and numeric substitution; no generated image is presented as approved.
+The self-authored [sample lesson plan](examples/sample-lesson-plan.md) feeds the [example card prompt](examples/algebra-cards.md). The command extracts one prompt as JSON. It does not parse arbitrary PDF/DOCX files, call an image API, or verify generated pixels. Use the example prompt in an image tool, then complete the [review checklist](skills/knowledge-cards/references/review-checklist.md). The example formula is checked by expansion and numeric substitution; no generated image is presented as approved.
 
 ## What is verified
 
 | Stage | Status |
 | --- | --- |
 | Markdown to JSON prompt extraction | Locally demonstrated with the example |
+| Uploaded lesson plan or textbook intake | Workflow documented; only the self-authored Markdown lesson plan is demonstrated in this repository. PDF/DOCX/OCR behavior depends on the host agent and file quality |
 | Prompt template and source ledger workflow | Documented; human applies it to each new topic |
 | ChatGPT image generation | Used in the source project, but no reusable end-to-end automated run is established here |
 | Desktop, browser, or paid API batch sending | Experimental ideas and prior scripts; excluded from this release |
